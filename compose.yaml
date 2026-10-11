@@ -1,0 +1,26 @@
+# Local run of every service with production-like hardening: `make up`, then `make down`.
+name: production-repo-template
+
+x-hardening: &hardening
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: ["no-new-privileges:true"]
+  tmpfs: [/tmp]
+  restart: unless-stopped
+
+services:
+  api-python:
+    <<: *hardening
+    build:
+      context: ./services/api-python
+      args: { APP_VERSION: local }
+    env_file: { path: .env, required: false }
+    ports: ["127.0.0.1:8000:8000"]
+
+  api-go:
+    <<: *hardening
+    build:
+      context: ./services/api-go
+      args: { APP_VERSION: local }
+    env_file: { path: .env, required: false }
+    ports: ["127.0.0.1:8080:8080"]
