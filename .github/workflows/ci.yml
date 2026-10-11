@@ -16,7 +16,7 @@ concurrency:
 jobs:
   repo-checks:
     name: Repo checks (workflows, secrets, misconfigurations)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 # pinned: upgrade deliberately, not when GitHub moves "latest"
     permissions:
       contents: read
       pull-requests: read # gitleaks lists the commits of a pull request
@@ -45,7 +45,7 @@ jobs:
 
   python:
     name: Python (lint, types, tests)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 # pinned: upgrade deliberately, not when GitHub moves "latest"
     defaults:
       run:
         working-directory: services/api-python
@@ -66,7 +66,7 @@ jobs:
 
   go:
     name: Go (lint, tests)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 # pinned: upgrade deliberately, not when GitHub moves "latest"
     defaults:
       run:
         working-directory: services/api-go
@@ -95,7 +95,7 @@ jobs:
   images:
     name: Image ${{ matrix.service }} (build, scan, smoke test)
     needs: [python, go]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 # pinned: upgrade deliberately, not when GitHub moves "latest"
     strategy:
       fail-fast: false
       matrix:

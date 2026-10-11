@@ -20,7 +20,9 @@ RUN --mount=type=cache,target=/root/.cache/uv uv sync --locked --no-dev --no-edi
 FROM python:3.13-slim-trixie
 ARG APP_VERSION=0.0.0
 ENV PATH="/app/.venv/bin:${PATH}" PYTHONUNBUFFERED=1 APP_VERSION=${APP_VERSION}
-RUN groupadd --system --gid 10001 app && useradd --system --uid 10001 --gid app --no-create-home app
+# pip is only needed to build, and its bundled libraries (urllib3, msgpack, …) show up in CVE scans.
+RUN python -m pip uninstall --yes pip \
+ && groupadd --system --gid 10001 app && useradd --system --uid 10001 --gid app --no-create-home app
 WORKDIR /app
 COPY --from=build --chown=app:app /app/.venv /app/.venv
 USER 10001:10001
