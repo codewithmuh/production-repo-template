@@ -1,8 +1,18 @@
-# Production repo template
+# Production Repo Template
 
-[![ci](https://github.com/codewithmuh/production-repo-template/actions/workflows/ci.yml/badge.svg)](https://github.com/codewithmuh/production-repo-template/actions/workflows/ci.yml)
-[![release](https://github.com/codewithmuh/production-repo-template/actions/workflows/release.yml/badge.svg)](https://github.com/codewithmuh/production-repo-template/actions/workflows/release.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+<p align="center">
+  <a href="https://github.com/codewithmuh/production-repo-template/releases"><img src="https://img.shields.io/github/v/release/codewithmuh/production-repo-template?color=blue&label=version&style=flat-square" alt="GitHub Release"></a>
+  <a href="https://github.com/codewithmuh/production-repo-template/actions/workflows/ci.yml"><img src="https://github.com/codewithmuh/production-repo-template/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/codewithmuh/production-repo-template/actions/workflows/release.yml"><img src="https://github.com/codewithmuh/production-repo-template/actions/workflows/release.yml/badge.svg" alt="Release"></a>
+  <a href="https://github.com/codewithmuh/production-repo-template/stargazers"><img src="https://img.shields.io/github/stars/codewithmuh/production-repo-template?style=flat-square" alt="Stars"></a>
+  <a href="https://github.com/codewithmuh/production-repo-template/network/members"><img src="https://img.shields.io/github/forks/codewithmuh/production-repo-template?style=flat-square" alt="Forks"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat-square" alt="License: MIT"></a>
+  <br>
+  <img src="https://img.shields.io/badge/Python-3.12%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Go-1.22%2B-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go">
+  <img src="https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/Security-Trivy%20%7C%20Gitleaks-critical?style=flat-square" alt="Security">
+</p>
 
 A GitHub template that makes every new repository **production-grade from the first commit**: CI on every pull
 request, secret and vulnerability scanning, signed container images with SBOMs, automated releases and changelog,
